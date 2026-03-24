@@ -1436,3 +1436,61 @@ color:#666;
     align-items: center;
   }
 }
+
+.product-banner {
+    width: 100%;
+    padding: 30px 15px;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-container {
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+/* Image Styling */
+.banner-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effect (only desktop) */
+@media (hover: hover) {
+    .banner-container:hover img {
+        transform: scale(1.05);
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .product-banner {
+        padding: 20px 10px;
+    }
+
+    .banner-container {
+        border-radius: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .product-banner {
+        padding: 15px 8px;
+    }
+
+    .banner-container {
+        border-radius: 8px;
+    }
+
+    .banner-container img {
+        border-radius: 8px;
+    }
+}
