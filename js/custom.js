@@ -167,3 +167,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+const slider = document.getElementById("slider");
+const beforeImg = document.getElementById("beforeImg");
+const container = document.getElementById("compareBox");
+
+let isActive = false;
+
+const start = () => isActive = true;
+const stop = () => isActive = false;
+
+const move = (e) => {
+  if (!isActive) return;
+
+  let x = e.touches ? e.touches[0].clientX : e.clientX;
+  let rect = container.getBoundingClientRect();
+  let percent = (x - rect.left) / rect.width;
+
+  // clamp
+  percent = Math.max(0, Math.min(1, percent));
+
+  // DOOR EFFECT using clip-path
+  beforeImg.style.clipPath = `inset(0 ${100 - percent * 100}% 0 0)`;
+
+  slider.style.left = percent * 100 + "%";
+};
+
+// EVENTS
+slider.addEventListener("mousedown", start);
+window.addEventListener("mouseup", stop);
+window.addEventListener("mousemove", move);
+
+slider.addEventListener("touchstart", start);
+window.addEventListener("touchend", stop);
+window.addEventListener("touchmove", move);
