@@ -154,7 +154,7 @@ body {
     }
 
     .slide img {
-        height: 35vh;
+        height: 30vh;
     }
 
 
@@ -1640,5 +1640,55 @@ color:#666;
     margin-top: 30px;
     width: 100%;
     max-width: 320px;
+  }
+}
+
+/* Button Group */
+.fs-btn-group {
+  margin-top: auto;
+}
+
+/* Base Button */
+.btn-modern {
+  flex: 1;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid #e5e5e5;
+}
+
+/* Quick View (Light Style) */
+.btn-view {
+  background: #fff;
+  color: #333;
+}
+
+.btn-view:hover {
+  background: #f8f8f8;
+  border-color: #ccc;
+}
+
+/* Quick Buy (Primary Button) */
+.btn-buy {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.btn-buy:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Mobile Fix */
+@media(max-width: 576px) {
+  .btn-modern {
+    font-size: 12px;
+    padding: 8px;
   }
 }
